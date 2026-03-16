@@ -1,0 +1,135 @@
+/* Wrapper */
+.cal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px auto;
+  max-width: 380px;
+}
+
+/* Contenitore principale */
+.react-calendar {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.18);
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: #fff;
+  padding: 0;
+}
+
+/* Barra navigazione (mese/anno) */
+.react-calendar__navigation {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  padding: 12px 8px;
+  margin-bottom: 0;
+}
+
+.react-calendar__navigation button {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  min-width: 40px;
+  padding: 6px 10px;
+  transition: background 0.2s;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Intestazione giorni della settimana */
+.react-calendar__month-view__weekdays {
+  background: #f0f0ff;
+  padding: 6px 0 4px;
+  text-align: center;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+/* Giorni */
+.react-calendar__month-view__days {
+  padding: 8px;
+  gap: 4px;
+}
+
+.react-calendar__tile {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  max-width: 40px;
+  margin: 2px auto;
+  font-size: 14px;
+  color: #374151;
+  background: none;
+  border: none;
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-calendar__tile:enabled:hover {
+  background: #e0e7ff;
+  color: #4f46e5;
+  transform: scale(1.1);
+}
+
+/* Oggi */
+.react-calendar__tile--now {
+  background: #fef9c3 !important;
+  color: #b45309 !important;
+  font-weight: 700;
+}
+
+.react-calendar__tile--now:enabled:hover {
+  background: #fde68a !important;
+}
+
+/* Selezionato */
+.react-calendar__tile--active,
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  color: #fff !important;
+  font-weight: 700;
+  transform: scale(1.12);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+/* Giorni fuori mese */
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #d1d5db;
+}
+
+/* Weekend */
+.react-calendar__month-view__days__day--weekend {
+  color: #ef4444;
+}
+
+/* Data selezionata sotto */
+.cal-selected {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+  letter-spacing: 0.3px;
+}
