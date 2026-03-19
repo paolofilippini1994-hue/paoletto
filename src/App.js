@@ -26,4 +26,5 @@ function App() {
   );
 }
 
+console.log("ciao Friday 🔥");
 export default App;
