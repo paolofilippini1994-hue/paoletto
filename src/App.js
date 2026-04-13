@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Title from './title'; 
 import Mark from './mark';
@@ -7,21 +8,46 @@ import MyCalendar from './calendar';
 import MyCarousel from './MyCarousel';
 
 function App() {
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [showCarousel, setShowCarousel] = useState(false);
+
   return (
-    <div>
+    <div className="app-container">
       <Title>ciao friday</Title>
       <h3 style={{ textAlign: "center" }}>Ciao</h3>
       <Frase>
         Sono <Mark backgroundColor="lightgreen">Evidenziato</Mark>
       </Frase>
       <Frase>ora no</Frase>
-      <p style={{ textAlign: "center" }}>ahahahahaha</p>
-      <p style={{ textAlign: "center", fontSize: "20px" }}>
-        Ora sono le <Orologio />
-      </p>
-      <MyCalendar />
-      <h1 className="text-center mt-3">Il mio carousel</h1>
-      <MyCarousel />
+      <Frase>Ora sono le <Orologio /> Grazie e arrivederci.</Frase>
+    
+
+      <div className="toggle-controls">
+        <button
+          type="button"
+          className="toggle-button"
+          onClick={() => setShowCalendar((current) => !current)}
+        >
+          {showCalendar ? 'Nascondi calendario' : 'Mostra calendario'}
+        </button>
+        <button
+          type="button"
+          className="toggle-button"
+          onClick={() => setShowCarousel((current) => !current)}
+        >
+          {showCarousel ? 'Nascondi carousel' : 'Mostra carousel'}
+        </button>
+      </div>
+
+      <div className="toggle-section">
+        {showCalendar && <MyCalendar />}
+        {showCarousel && (
+          <>
+            <h1 className="text-center mt-3">Il mio carousel</h1>
+            <MyCarousel />
+          </>
+        )}
+      </div>
     </div>
   );
 }

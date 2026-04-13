@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './orologio.css';
 
 function Orologio() {
 
@@ -13,7 +14,7 @@ function Orologio() {
   }, []);
 
   return (
-    <span>{ora.toLocaleTimeString()}</span>
+    <span className="orologio">{ora.toLocaleTimeString()}</span>
   );
 }
 
